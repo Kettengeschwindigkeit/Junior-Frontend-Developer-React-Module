@@ -1,9 +1,14 @@
 import React from "react"
 
 const Counter = () => {
+    const count = 0 
+
+    const formatCount = () => {
+        return count === 0 ? "empty" : count
+    }
     return (
         <div>
-            <h1>Counter</h1>
+            <span>{formatCount()}</span>
             <button>+</button>
         </div>
     )
