@@ -12,14 +12,15 @@ const CountersList = () => {
         {id: 4, value: 0, name: 'Minimalist kit'}
     ]) 
 
-    const handleDelete = () => {
-        console.log('handle delete')
+    const handleDelete = (id) => {
+        const newCounters = counters.filter((c) => c.id !== id)
+        setCounters(newCounters)
     }
 
     return (
         <>
             {counters.map((count) => (
-                <Counter key={count.id} value={count.value} name={count.name} onDelete={handleDelete} />
+                <Counter key={count.id} id={count.id} value={count.value} name={count.name} onDelete={handleDelete} />
             ))}
         </>
     )
